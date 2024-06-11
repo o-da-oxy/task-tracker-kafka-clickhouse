@@ -4,6 +4,7 @@ using DddService.Common;
 using DddService.Aggregates;
 using MediatR;
 using DddService.Features;
+using DddService.EventBus;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,8 @@ builder.Services.AddDbContext<ProjectAggregateDbContext>(options =>
     options.UseNpgsql("Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=123",
         b => b.MigrationsAssembly("DddService"));
 });
+
+builder.Services.AddSingleton<KafkaProducerService>();
 
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
