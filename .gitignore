@@ -1,0 +1,7 @@
+/FirstMicroservices.sln
+.idea
+.vs
+.vscode
+bin/
+obj/
+
