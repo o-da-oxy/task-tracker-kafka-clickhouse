@@ -4,5 +4,5 @@ GET {{base_address}}/api/projects
 POST {{base_address}}/api/projects
 Content-Type: application/json
 {
-  "name": "Project 1",
+  "name": "Project 1"
 }
